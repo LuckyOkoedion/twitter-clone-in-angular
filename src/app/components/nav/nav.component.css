@@ -1,0 +1,59 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.nav-link:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.178);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.active {
+  font-weight: 900;
+}
+
+.nav-twit-button {
+  background-color: rgb(67, 112, 67);
+  color: white;
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+
+.nav-twit-button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.profile-section {
+  margin-top: 50px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+a {
+    text-decoration: none;
+}

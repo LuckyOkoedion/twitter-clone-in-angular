@@ -1,0 +1,17 @@
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.twit-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.twit-section:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}

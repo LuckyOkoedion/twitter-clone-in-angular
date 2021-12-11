@@ -1,0 +1,51 @@
+.fixed-header {
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+}
+
+.inter {
+  width: 100vw;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bolder;
+  color: rgb(67, 112, 67);
+  font-size: 1.5em;
+  margin-left: 100px;
+  background-color: rgba(67, 112, 67, 0.192);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.section-title {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.search-wrapper {
+  margin-right: 250px;
+}
+
+.search-bar {
+  width: 250px;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.37);
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.search-bar:focus {
+}

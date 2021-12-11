@@ -1,0 +1,302 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.logout {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgb(67, 112, 67);
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
+.auth-main-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(67, 112, 67);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-title {
+  font-size: 3em;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+
+.form-section {
+  min-height: 300px;
+  min-width: 360px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.form-item {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.auth-input {
+  min-height: 35px;
+  border-radius: 7px;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.116);
+}
+
+.auth-input:focus {
+  border: none;
+  outline: none;
+}
+
+.auth-button {
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-weight: bolder;
+  background-color: rgb(67, 112, 67);
+  font-size: 1.2em;
+  border-radius: 10px;
+}
+
+.auth-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.auth-alt {
+  display: flex;
+  flex-direction: row;
+}
+
+.alt-ques {
+  margin-right: 10px;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.alt-btn {
+  font-size: 1.2em;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.twit {
+  word-wrap: break-word;
+  width: 300px;
+}
+
+.alt-btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-button {
+}
+
+.wrapper1 {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+
+.wrapper2 {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+}
+
+.wrapper3 {
+  position: absolute;
+  top: 100px;
+  left: 1100px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-inner-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.author {
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.engagement-section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.comments-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment {
+  margin-left: 5px;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+  background-color: rgb(67, 112, 67);
+  border-radius: 15px;
+}
+
+.comment:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.like {
+  padding: 5px;
+  margin-left: 5px;
+  color: white;
+  font-weight: bolder;
+  background-color: rgb(67, 112, 67);
+  border-radius: 15px;
+}
+
+.like:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.likes-section {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.compose-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.compose-focus {
+  margin-left: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {
+  /* height: 40px; */
+  width: 350px;
+  border: none;
+}
+
+textarea:focus {
+  border: none;
+  /* outline: none; */
+}
+
+.send-button {
+  margin-top: 70px;
+  padding: 10px;
+  background-color: rgb(67, 112, 67);
+  color: white;
+  font-weight: bolder;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.send-button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper3 {
+    position: absolute;
+    top: 730px;
+    left: 100px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper1 {
+    /* position: absolute;
+    top: 100px;
+    left: 20px; */
+    display: none;
+  }
+
+  .wrapper2 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+  }
+
+  .wrapper3 {
+    /* position: absolute;
+    top: 730px;
+    left: 10px; */
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper1 {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+  }
+
+  .wrapper2 {
+    position: absolute;
+    top: 100px;
+    left: 500px;
+  }
+
+  .wrapper3 {
+    position: absolute;
+    top: 100px;
+    left: 1100px;
+  }
+}

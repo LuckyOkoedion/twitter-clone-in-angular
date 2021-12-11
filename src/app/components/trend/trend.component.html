@@ -1,0 +1,24 @@
+<div class="wrapper3">
+    <div>
+        <div class="trends-container">
+            <div class="trends-bar">
+                <div class="trend-header">Trends for you</div>
+                <div class="trend" *ngFor="let trend of trends">
+                    <div class="trend-category">{{trend.category}}</div>
+                    <div class="trend-title">{{trend.title}}</div>
+                    <div class="twit-count">{{trend.count}}</div>
+                </div>
+            </div>
+            <div class="who-to-follow-bar">
+                <div class="who" *ngFor="let person of persons">
+                    <div class="person-info">
+                        <div class="who-name">{{person.name}}</div>
+                        <div class="who-email">{{person.email}}</div>
+                    </div>
+                    <div class="who-follow-button">Follow</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

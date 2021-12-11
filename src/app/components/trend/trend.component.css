@@ -1,0 +1,61 @@
+.trends-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.trends-bar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.157);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.trend-header {
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.trend {
+  margin-bottom: 20px;
+}
+
+.trend-title {
+  font-weight: bolder;
+}
+
+.who-to-follow-bar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.157);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.who {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.who-name {
+  font-weight: bolder;
+}
+
+.who-follow-button {
+  padding: 10px;
+  background-color: rgb(67, 112, 67);
+  color: white;
+  font-weight: bolder;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+.who-follow-button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}

@@ -1,0 +1,30 @@
+<div class="wrapper2">
+    <div>
+        <div class="timeline-container">
+            <div id="compose-input" class="compose-section">
+                <div class="profile-image"></div>
+                <div class="compose-focus">
+                    <div>
+                        <textarea name="" id="" cols="30" rows="3" placeholder="What's happening?" [(ngModel)]="newTwit"></textarea>
+                    </div>
+                    <div class="send-button" (click)="sendTwit()"> Send Twit</div>
+                </div>
+            </div>
+            <div class="twit-section" *ngFor="let item of twits" (click)="toDetail(item)">
+                <div class="author">{{item.author}}</div>
+                <div class="twit">{{item.post}}</div>
+                <div class="engagement-section">
+                    <div class="comments-section">
+                        <div class="comment-count">{{item.comments}} </div>
+                        <div class="comment">Comments</div>
+                    </div>
+                    <div class="likes-section">
+                        <div class="like-count">{{item.likes}}</div>
+                        <div class="like">Likes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

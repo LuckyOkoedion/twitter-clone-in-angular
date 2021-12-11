@@ -1,0 +1,20 @@
+<div class="auth-main-container">
+    <div class="auth-title">Login to Twitee</div>
+    <div class="form-section">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-item">
+                <label for="email">Email</label>
+                <input class="auth-input" id="email" type="email" formControlName="email">
+            </div>
+            <div class="form-item">
+                <label for="password">Password</label>
+                <input class="auth-input" id="password" type="password" formControlName="password">
+            </div>
+            <button class="auth-button" type="submit" [disabled]="!loginForm.valid">Login</button>
+        </form>
+    </div>
+    <div class="auth-alt">
+        <div class="alt-ques">Don't have an account?</div>
+        <div class="alt-btn" (click)="register()">Register</div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="wrapper2">
+    <div>
+        <div class="detail-container">
+            <div class="the-twit">
+                <div class="author">{{theTwit?.author}}</div>
+                <div class="twit">{{theTwit?.post}}</div>
+                <div class="engagement-section">
+                    <div class="comments-section">
+                        <div class="comment-count">{{theTwit?.comments}} </div>
+                        <div class="detail-comment">Comments</div>
+                    </div>
+                    <div class="likes-section">
+                        <div class="like-count">{{theTwit?.likes}}</div>
+                        <div class="detail-like">Likes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="compose-focus detail-push">
+                <div>
+                    <textarea name="" id="" cols="30" rows="3" placeholder="What's your take?"></textarea>
+                </div>
+                <div class="send-button"> Reply</div>
+            </div>
+            <div class="all-the-comments">
+                <div class="single-comment" *ngFor="let item of comments">
+                    <div class="commenter">{{item?.commenter}}</div>
+                    <div class="twit">{{item?.comment}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

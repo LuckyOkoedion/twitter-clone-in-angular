@@ -1,0 +1,30 @@
+<div class="wrapper1">
+    <div>
+        <div class="nav-container">
+            <div id="home" class="nav-link active" (click)="goToHome()">Home</div>
+            <div class="nav-link">Explore</div>
+            <div class="nav-link">Notifications</div>
+            <div class="nav-link">Messages</div>
+            <div class="nav-link">Bookmarks</div>
+            <div class="nav-link">Lists</div>
+            <div class="nav-link">Profile</div>
+            <div class="nav-link">More</div>
+            <a href="#home">
+                <div class="nav-twit-button">Twit Something</div>
+            </a>
+            <div class="profile-section">
+                <div class="profile-image"></div>
+                <div>
+                    <div class="profile-container">
+                        <div class="profile-info">
+                            <div class="profile-user-name">{{user.name}}</div>
+                            <div class="profile-user-email">{{user.email}}</div>
+                            <div class="logout" (click)="logout()">Logout</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
