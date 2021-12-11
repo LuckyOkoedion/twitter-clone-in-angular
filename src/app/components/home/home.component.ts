@@ -34,9 +34,9 @@ export class HomeComponent implements OnInit {
     private postService: PostService,
     private commentService: CommentService
   ) {
-    if (localStorage.getItem('LLEAD_TK!?') == null) {
-      this.router.navigate(["/login"]);
-    }
+    // if (localStorage.getItem('LLEAD_TK!?') == null) {
+    //   this.router.navigate(["/login"]);
+    // }
     this.showDetail = false;
   }
 
