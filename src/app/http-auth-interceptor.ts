@@ -15,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     constructor(private userService: UserService) {
 
-        if(localStorage.getItem('TWTEE_TK!?') != null) {
+        if (localStorage.getItem('TWTEE_TK!?') != null) {
             this.availableToken = true;
         }
 

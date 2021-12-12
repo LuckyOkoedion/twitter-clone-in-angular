@@ -8,6 +8,11 @@ export interface CreateUserDto {
     password: string
 }
 
+export interface CurrentUserDto {
+    name: string
+    email: string
+}
+
 export interface LoginDto {
     readonly email: string;
     readonly password: string;

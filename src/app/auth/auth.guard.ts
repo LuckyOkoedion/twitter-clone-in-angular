@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (localStorage.getItem('LLEAD_TK!?') != null) {
+    if (localStorage.getItem('TWTEE_TK!?') != null) {
       return true;
     } else {
       let urlTree = this.router.createUrlTree(["/login"]);

@@ -26,6 +26,11 @@
   border-radius: 15px;
 }
 
+.detail-like:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 .detail-comment {
   margin-left: 5px;
   color: white;

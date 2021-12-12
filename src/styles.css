@@ -3,6 +3,40 @@ body {
   margin: 0px;
 }
 
+.input-validation {
+  font-size: 0.8em;
+  color: red;
+}
+
+.form-validation {
+  margin-bottom: 20px;
+  color: red;
+}
+
+.profile-user-name {
+  font-weight: bolder;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid rgb(67, 112, 67);
+  border-radius: 50%;
+  margin-left: 35vw;
+  margin-top: 30vh;
+  width: 20vw;
+  height: 20vw;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .logout {
   margin-top: 10px;
   padding-left: 10px;

@@ -1,9 +1,9 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { AuthDto, CreateUserDto, LoginDto, User, UserDataDto, UserDetail } from '../types/user.dto';
+import { BehaviorSubject, Observable, of, ReplaySubject, Subject, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { AuthDto, CreateUserDto, CurrentUserDto, LoginDto, User, UserDataDto, UserDetail } from '../types/user.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,12 @@ export class UserService {
   headerValue: any;
 
   reqOptions: any;
+
+  isAuth: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
+  currentUser: Subject<CurrentUserDto> = new Subject();
+
+  isLoading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
 
   constructor(
@@ -87,6 +93,13 @@ export class UserService {
           // }
           return theValue;
         })
+        // catchError((er: any) => {
+        //   if (er) {
+        //     this.setIsLoading(false);
+        //   }
+
+        //   return throwError(er);
+        // })
       )
   }
 
@@ -120,6 +133,34 @@ export class UserService {
         })
       )
   }
+
+
+  setIsAuth(value: boolean) {
+    this.isAuth.next(value);
+  }
+
+  getIsAuth() {
+    return this.isAuth.asObservable();
+  }
+
+
+  setCurrentUser(usr: CurrentUserDto) {
+    this.currentUser.next(usr);
+  }
+
+  getCurrentUser() {
+    return this.currentUser.asObservable();
+  }
+
+  setIsLoading(value: boolean) {
+    this.isLoading.next(value);
+  }
+
+  getIsLoading() {
+    return this.isLoading.asObservable();
+  }
+
+
 
 
   getAll(): Observable<Promise<UserDetail[]>> {

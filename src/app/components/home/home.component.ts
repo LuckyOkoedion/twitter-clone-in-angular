@@ -17,6 +17,7 @@ import { UserDataDto, UserDetail } from 'src/app/types/user.dto';
 })
 export class HomeComponent implements OnInit {
 
+  loading: boolean;
   allUsers: UserDetail[] = [];
   allComments: CommentDetail[] = [];
   allPosts: PostDetail[] = [];
@@ -34,10 +35,15 @@ export class HomeComponent implements OnInit {
     private postService: PostService,
     private commentService: CommentService
   ) {
-    // if (localStorage.getItem('LLEAD_TK!?') == null) {
-    //   this.router.navigate(["/login"]);
-    // }
+
     this.showDetail = false;
+    this.userService.setIsLoading(false);
+
+    this.userService.getIsLoading().subscribe(valu => {
+      if (typeof valu != 'undefined') {
+        this.loading = valu;
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -48,6 +54,64 @@ export class HomeComponent implements OnInit {
       this.allUsers = [...theUsr];
     });
 
+    this.setAllPosts();
+    this.setAllComments();
+
+
+  }
+
+  handleDetailEvent(value?: any) {
+
+    this.chosenComments.length = 0;
+    let processed = this.prepDetailData(value);
+    this.chosenComments = [...processed];
+
+    if (this.chosenComments.length > 0) {
+      this.chosenTwit = value;
+      this.appState.setSelectedTwit(value);
+      this.appState.setTitle("Twit Detail");
+      this.showDetail = true;
+    }
+
+  }
+
+  handleHomeEvent(value?: any) {
+    this.showDetail = false;
+  }
+
+  private prepDetailData(theChosen: Twit) {
+
+    let theFiltered = this.allComments.filter(valu => valu.postId == theChosen.id);
+    let theSpec: IComment[] = theFiltered.map(comm => {
+      return {
+        "comment": comm.comment,
+        "commenter": this.getUserId(comm.userWhoCommented)
+      }
+    });
+
+    return theSpec;
+
+  }
+
+  private getUserId(authorId: number): string {
+    let theFilter = this.allUsers.find(valu => valu.id == authorId);
+    return theFilter?.name;
+  }
+
+
+  handleRefreshDetailData(value?: any) {
+    console.log(`refresh event param is: ${JSON.stringify(value)}`)
+    if (value) {
+      this.setAllPosts();
+      this.setAllComments();
+      this.handleDetailEvent(value);
+    } else {
+      window.location.reload();
+    }
+  }
+
+
+  private setAllPosts() {
     this.postService.getAll().subscribe(async pos => {
       let thePos = await pos;
       if (typeof thePos != "undefined") {
@@ -71,6 +135,9 @@ export class HomeComponent implements OnInit {
       }
     });
 
+  }
+
+  private setAllComments() {
     this.commentService.getAll().subscribe(async comm => {
       let theComm = await comm;
       if (typeof theComm != 'undefined') {
@@ -79,47 +146,6 @@ export class HomeComponent implements OnInit {
       }
     });
 
-
-  }
-
-  handleDetailEvent(value: Twit) {
-
-    this.chosenComments.length = 0;
-    let processed = this.prepDetailData(value);
-    this.chosenComments = [...processed];
-
-    if (this.chosenComments.length > 0) {
-      this.chosenTwit = value;
-      this.appState.setSelectedTwit(value);
-      this.appState.setTitle("Twit Detail");
-      this.showDetail = true;
-    }
-
-  }
-
-  handleHomeEvent(value?: any) {
-    this.showDetail = false;
-  }
-
-  private prepDetailData(theChosen: Twit) {
-    console.log("prepDetail called");
-
-    let theFiltered = this.allComments.filter(valu => valu.postId == theChosen.id);
-    let theSpec: IComment[] = theFiltered.map(comm => {
-      return {
-        "comment": comm.comment,
-        "commenter": this.getUserId(comm.userWhoCommented)
-      }
-    });
-
-    return theSpec;
-
-  }
-
-  private getUserId(authorId: number): string {
-    console.log("getUserId called");
-    let theFilter = this.allUsers.find(valu => valu.id == authorId);
-    return theFilter?.name;
   }
 
 

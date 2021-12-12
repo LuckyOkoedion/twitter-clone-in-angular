@@ -1,18 +1,13 @@
-<div>
+<div *ngIf="!loading">
   <app-header></app-header>
   <div>
     <app-nav class="nav" (homeEvent)="handleHomeEvent($event)"></app-nav>
-    <app-detail 
-    *ngIf="showDetail" 
-    class="detail" 
-    [theTwit]="chosenTwit"
-    [comments]="chosenComments"
-    ></app-detail>
-    <app-timeline 
-    [twits]="allTwits"
-    class="timeline" 
-    *ngIf="!showDetail" 
-    (detailEvent)="handleDetailEvent($event)"></app-timeline>
+    <app-detail *ngIf="showDetail" class="detail" [theTwit]="chosenTwit" [comments]="chosenComments"></app-detail>
+    <app-timeline [twits]="allTwits" class="timeline" *ngIf="!showDetail" (detailEvent)="handleDetailEvent($event)"
+      (refreshTwitsEvent)="handleRefreshDetailData($event)" (refreshCommentsEvent)="handleRefreshDetailData($event)">
+    </app-timeline>
     <app-trend class="trend"></app-trend>
   </div>
 </div>
+
+<div class="loader" *ngIf="loading"></div>

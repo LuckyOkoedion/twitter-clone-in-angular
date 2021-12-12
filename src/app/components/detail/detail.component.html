@@ -11,15 +11,15 @@
                     </div>
                     <div class="likes-section">
                         <div class="like-count">{{theTwit?.likes}}</div>
-                        <div class="detail-like">Likes</div>
+                        <div class="detail-like" (click)="addLike()">Likes</div>
                     </div>
                 </div>
             </div>
             <div class="compose-focus detail-push">
                 <div>
-                    <textarea name="" id="" cols="30" rows="3" placeholder="What's your take?"></textarea>
+                    <textarea name="" id="" cols="30" rows="3" placeholder="What's your take?" [(ngModel)]="newComment"></textarea>
                 </div>
-                <div class="send-button"> Reply</div>
+                <div class="send-button" (click)="addComment()"> Reply</div>
             </div>
             <div class="all-the-comments">
                 <div class="single-comment" *ngFor="let item of comments">

@@ -1,19 +1,23 @@
-<div class="auth-main-container">
+<div class="auth-main-container" *ngIf="!loading">
     <div class="auth-title">Register to Join Twitee</div>
     <div class="form-section">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-item">
                 <label for="name">Full Name</label>
                 <input class="auth-input" id="name" type="text" formControlName="name">
+                <div class="input-validation" *ngIf="registerForm.get('name').hasError('required')">Full Name is Required</div>
             </div>
             <div class="form-item">
                 <label for="email">Email</label>
                 <input class="auth-input" id="email" type="email" formControlName="email">
+                <div class="input-validation" *ngIf="registerForm.get('email').hasError('required')">Email is Required</div>
             </div>
             <div class="form-item">
                 <label for="password">Password</label>
-                <input class="auth-input" id="password" type="password" formControlName="password">
+                <input class="auth-input" id="password" type="text" formControlName="password">
+                <div class="input-validation" *ngIf="registerForm.get('password').hasError('required')">Password is Required</div>
             </div>
+            <div class="form-validation" *ngIf="registerFail">Registration failed. Check your internet.</div>
             <button class="auth-button" type="submit" [disabled]="!registerForm.valid">Register</button>
         </form>
     </div>
@@ -22,3 +26,5 @@
         <div class="alt-btn" (click)="login()">Login</div>
     </div>
 </div>
+
+<div class="loader" *ngIf="loading"></div>
